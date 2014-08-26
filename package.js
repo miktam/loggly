@@ -1,5 +1,6 @@
 Package.describe({
-  summary: 'Loggly client for Meteor'
+  summary: 'Loggly client for Meteor',
+  version: '0.2.0'
 });
 
 Npm.depends({

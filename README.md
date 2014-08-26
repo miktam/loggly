@@ -8,7 +8,7 @@ Loggly.{warn, error, info, trace} will produce error message with appropriate ta
 
 ## Installation
 
-`mrt add loggly`
+`meteor add miktam:loggly`
 
 ## Usage
 
