@@ -13,6 +13,8 @@ Loggly.{warn, error, info, trace} will produce error message with appropriate ta
 ## Usage
 
 ```js
+      //Create the Logger object on the server side only
+      //for example, you can put the following in Meteor.startup on the server
 
       Logger = new Loggly({
         token: "your-really-long-input-token",
@@ -24,10 +26,12 @@ Loggly.{warn, error, info, trace} will produce error message with appropriate ta
         //
         // Optional: Tag to send with EVERY log message
         //
-        tags: ['global-tag'],
+        tags: ["global-tag"],
         // Optional: logs will be stored in JSON format
-        json: true
+        json: "true"
       });
+
+      //The following can be called on either the Meteor client or server
 
       Logger.log("first log from meteor");
       Logger.info("it will store this message with info tag");

@@ -9,7 +9,7 @@ Loggly = function(options) {
  */
 Loggly.prototype.log = function (param, tag) {
   this.client.log(param, tag);
-}
+};
 
 /**
  * Set of useful methods to log with the tag
@@ -18,29 +18,25 @@ Loggly.prototype.log = function (param, tag) {
  */
 
 Loggly.prototype._applyArguments = function (args, tag) {
-  if (args && args.length == 1) {
+  if (args && args.length === 1) {
     this.client.log(args[0], tag);
   } else {
     this.client.log(args, tag);
   }
-}
+};
 
 Loggly.prototype.trace = function () {
   this._applyArguments(arguments, 'trace');
-}
+};
 
 Loggly.prototype.info = function () {
   this._applyArguments(arguments, 'info');
-}
+};
 
 Loggly.prototype.warn = function () {
   this._applyArguments(arguments, 'warn');
-}
+};
 
 Loggly.prototype.error = function () {
   this._applyArguments(arguments, 'error');
-}
-
-
-
-
+};
