@@ -1,8 +1,10 @@
 # Loggly for Meteor
 
-A client implementation for Loggly cloud Logging-as-a-Service API.
+A Meteor logger for Loggly on the server/client side.
 
-Module wraps [loggly](https://www.npmjs.org/package/loggly) npm module made by [Charlie Robbins](https://github.com/indexzero) and adds a few useful helpers, like log.error/log.trace/log.info/log.warn.
+Client side support implemented by [Michael Ghobrial](https://github.com/Art1Sec8)
+
+Module wraps [loggly](https://www.npmjs.org/package/loggly) npm module and adds a few useful helpers, like log.error/log.trace/log.info/log.warn.
 
 Loggly.{warn, error, info, trace} will produce error message with appropriate tag (warn, error, info or trace).
 
@@ -10,7 +12,7 @@ Loggly.{warn, error, info, trace} will produce error message with appropriate ta
 
 `meteor add miktam:loggly`
 
-## Usage
+## Usage (client/server side)
 
 ```js
       //Create the Logger object on the server side only
@@ -49,4 +51,4 @@ Loggly.{warn, error, info, trace} will produce error message with appropriate ta
 
 The MIT License (MIT)
 
-Copyright (c) 2014, Andrei Karpushonak aka @miktam, http://avrora.io
+Copyright (c) 2015, Andrei Karpushonak aka @miktam, http://avrora.io

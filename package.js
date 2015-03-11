@@ -1,7 +1,7 @@
 Package.describe({
-  name: 'avrora:loggly',
+  name: 'miktam:loggly',
   summary: 'Loggly for Meteor',
-  version: '0.3.0',
+  version: '1.0.0',
   git: 'https://github.com/avrora/loggly/'
 });
 
