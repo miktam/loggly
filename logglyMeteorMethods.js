@@ -13,7 +13,7 @@ var loggerSet = function () {
 Meteor.methods({
   logglyLog: function(param, tag) {
     check(param,Object);
-    check(tag,Match.Optional([String]));
+    check(tag,Match.OneOf([String],null));
 
     if (loggerSet()){
       Logger.log(param, tag);
@@ -21,7 +21,7 @@ Meteor.methods({
   },
   logglyTrace: function(param, tag) {
     check(param,Object);
-    check(tag,Match.Optional([String]));
+    check(tag,Match.OneOf([String],null));
 
     if (loggerSet()){
       Logger.trace(param, tag);
@@ -29,7 +29,7 @@ Meteor.methods({
   },
   logglyInfo: function(param, tag) {
     check(param,Object);
-    check(tag,Match.Optional([String]));
+    check(tag,Match.OneOf([String],null));
 
     if (loggerSet()){
       Logger.info(param, tag);
@@ -37,7 +37,7 @@ Meteor.methods({
   },
   logglyWarn:  function(param, tag) {
     check(param,Object);
-    check(tag,Match.Optional([String]));
+    check(tag,Match.OneOf([String],null));
 
     if (loggerSet()){
       Logger.warn(param, tag);
@@ -45,7 +45,7 @@ Meteor.methods({
   },
   logglyError:  function(param, tag) {
     check(param,Object);
-    check(tag,Match.Optional([String]));
+    check(tag,Match.OneOf([String],null));
 
     if (loggerSet()) {
       Logger.error(param, tag);
