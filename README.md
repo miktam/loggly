@@ -51,4 +51,4 @@ Loggly.{warn, error, info, trace} will produce error message with appropriate ta
 
 The MIT License (MIT)
 
-Copyright (c) 2015, Andrei Karpushonak aka @miktam, http://avrora.io
+Copyright (c) 2016, Andrei Karpushonak aka @miktam

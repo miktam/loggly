@@ -1,8 +1,8 @@
 Package.describe({
   name: 'miktam:loggly',
   summary: 'Loggly for Meteor',
-  version: '1.0.0',
-  git: 'https://github.com/avrora/loggly/'
+  version: '1.1.0',
+  git: 'https://github.com/miktam/loggly/'
 });
 
 Npm.depends({

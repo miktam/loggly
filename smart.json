@@ -1,8 +1,8 @@
 {
   "name": "loggly",
   "description": "A client implementation for Loggly cloud Logging-as-a-Service API",
-  "homepage": "https://github.com/avrora/loggly",
-  "author": "Andrei Karpushonak <andrei@avrora.io>",
-  "version": "0.2.0",
-  "git": "https://github.com/avrora/loggly.git"
+  "homepage": "https://github.com/miktam/loggly",
+  "author": "Andrei Karpushonak <karpushonak@gmail.com>",
+  "version": "1.1.0",
+  "git": "https://github.com/miktam/loggly.git"
 }
