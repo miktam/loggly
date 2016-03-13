@@ -12,26 +12,41 @@ var loggerSet = function () {
 
 Meteor.methods({
   logglyLog: function(param, tag) {
+    check(param,Object);
+    check(tag,Match.OneOf([String],null));
+
     if (loggerSet()){
       Logger.log(param, tag);
     }
   },
   logglyTrace: function(param, tag) {
+    check(param,Object);
+    check(tag,Match.OneOf([String],null));
+
     if (loggerSet()){
       Logger.trace(param, tag);
     }
   },
   logglyInfo: function(param, tag) {
+    check(param,Object);
+    check(tag,Match.OneOf([String],null));
+
     if (loggerSet()){
       Logger.info(param, tag);
     }
   },
   logglyWarn:  function(param, tag) {
+    check(param,Object);
+    check(tag,Match.OneOf([String],null));
+
     if (loggerSet()){
       Logger.warn(param, tag);
     }
   },
   logglyError:  function(param, tag) {
+    check(param,Object);
+    check(tag,Match.OneOf([String],null));
+
     if (loggerSet()) {
       Logger.error(param, tag);
     }
