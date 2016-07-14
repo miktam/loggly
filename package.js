@@ -1,7 +1,7 @@
 Package.describe({
   name: 'miktam:loggly',
   summary: 'Loggly for Meteor',
-  version: '1.1.0',
+  version: '1.1.1',
   git: 'https://github.com/miktam/loggly/'
 });
 
@@ -15,8 +15,6 @@ Package.onUse(function (api) {
   api.addFiles('logglyMeteorMethods.js', 'server');
   api.addFiles('logglyClient.js', 'client');
   api.export('Loggly', 'server');
-  api.export('Logger', 'client'); //Logger Object needs to be created on server side
+  api.export('Logger', 'client');
+  api.export('Logger', 'server'); // Normally overwritten by users but handles cases of undefined Loggers on the server.
 });
-
-
-
