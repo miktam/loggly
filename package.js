@@ -11,6 +11,7 @@ Npm.depends({
 
 Package.onUse(function (api) {
   api.versionsFrom('0.9.4');
+  api.use(['check']);
   api.addFiles('logglyServer.js', 'server');
   api.addFiles('logglyMeteorMethods.js', 'server');
   api.addFiles('logglyClient.js', 'client');
