@@ -1,31 +1,31 @@
 Meteor.methods({
   logglyLog: function(param, tag) {
-    check(tag,Match.OneOf([String],null));
     check(param, Match.OneOf(String, Object));
+    check(tag, Match.OneOf([String], null));
 
     Logger.log(param, tag);
   },
   logglyTrace: function(param, tag) {
-    check(tag,Match.OneOf([String],null));
     check(param, Match.OneOf(String, Object));
+    check(tag, Match.OneOf([String], null));
 
     Logger.trace(param, tag);
   },
   logglyInfo: function(param, tag) {
-    check(tag,Match.OneOf([String],null));
     check(param, Match.OneOf(String, Object));
+    check(tag, Match.OneOf([String], null));
 
     Logger.info(param, tag);
   },
-  logglyWarn:  function(param, tag) {
-    check(tag,Match.OneOf([String],null));
+  logglyWarn: function(param, tag) {
     check(param, Match.OneOf(String, Object));
+    check(tag, Match.OneOf([String], null));
 
     Logger.warn(param, tag);
   },
-  logglyError:  function(param, tag) {
-    check(tag,Match.OneOf([String],null));
+  logglyError: function(param, tag) {
     check(param, Match.OneOf(String, Object));
+    check(tag, Match.OneOf([String], null));
 
     Logger.error(param, tag);
   }
