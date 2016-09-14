@@ -1,3 +1,5 @@
+
+import './imports/logglyMeteorMethods.js';
 var loggly = Npm.require('loggly');
 
 Loggly = function(options) {
