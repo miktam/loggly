@@ -1,6 +1,15 @@
 
+if (!Meteor.settings.loggly) {
+  console.error("Loggly not found in settings.json");
+  return;
+}
+
 import './imports/logglyMeteorMethods.js';
 var loggly = Npm.require('loggly');
+
+/**
+ * Basic setup of Loggly class
+ */
 
 Loggly = function(options) {
   this.client = loggly.createClient(options);
@@ -43,27 +52,8 @@ Loggly.prototype.error = function () {
   this._applyArguments(arguments, 'error');
 };
 
-// Create a default Logger object. Normally, this gets overwritten with the 'real'
-// Logger. The purpose of this default Logger is preventing errors from being thrown
-// on the server if there's no Logger created.
-Logger = {};
+/**
+ * Logger export
+ */
 
-Logger.log = function () {
-  console.log('Logger object was not created on the Meteor Server');
-};
-
-Logger.trace = function () {
-  console.log('Logger object was not created on the Meteor Server');
-};
-
-Logger.info = function () {
-  console.log('Logger object was not created on the Meteor Server');
-};
-
-Logger.warn = function () {
-  console.log('Logger object was not created on the Meteor Server');
-};
-
-Logger.error = function () {
-  console.log('Logger object was not created on the Meteor Server');
-};
+Logger = new Loggly(Meteor.settings.loggly);
