@@ -1,3 +1,4 @@
+
 Package.describe({
   name: 'miktam:loggly',
   summary: 'Loggly for Meteor',

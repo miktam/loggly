@@ -1,3 +1,4 @@
+
 Logger = {};
 
 Logger.log = function (param, tag) {
