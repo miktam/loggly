@@ -1,7 +1,8 @@
+
 Package.describe({
   name: 'miktam:loggly',
   summary: 'Loggly for Meteor',
-  version: '1.1.1',
+  version: '2.0.0',
   git: 'https://github.com/miktam/loggly/'
 });
 
@@ -10,12 +11,12 @@ Npm.depends({
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom('0.9.4');
-  api.use(['check']);
-  api.addFiles('logglyServer.js', 'server');
-  api.addFiles('logglyMeteorMethods.js', 'server');
-  api.addFiles('logglyClient.js', 'client');
-  api.export('Loggly', 'server');
+  api.versionsFrom('1.4.1');
+  api.use(['ecmascript', 'check']);
+
+  api.mainModule('logglyClient.js', 'client');
+  api.mainModule('logglyServer.js', 'server');
+
   api.export('Logger', 'client');
-  api.export('Logger', 'server'); // Normally overwritten by users but handles cases of undefined Loggers on the server.
+  api.export('Logger', 'server');
 });

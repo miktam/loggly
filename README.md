@@ -12,39 +12,34 @@ Loggly.{warn, error, info, trace} will produce error message with appropriate ta
 
 `meteor add miktam:loggly`
 
+## Configuration
+
+Once you have added the package, you will need to extend the Meteor.settings object with the following (e.g. in settings.json in your project root directory):
+
+```
+{
+  "token": "your-really-long-input-token",
+  "subdomain": "your-subdomain",
+  "auth": {
+    "username": "your-username",
+    "password": "your-password"
+  },
+  //
+  // Optional: Tag to send with EVERY log message
+  //
+  "tags": ["global-tag"],
+  // Optional: logs will be stored in JSON format
+  "json": "true"
+}
+```
+
 ## Usage (client/server side)
 
 ```js
-      //Create the Logger object on the server side only
-      //for example, you can put the following in Meteor.startup on the server
-
-      Logger = new Loggly({
-        token: "your-really-long-input-token",
-        subdomain: "your-subdomain",
-        auth: {
-          username: "your-username",
-          password: "your-password"
-        },
-        //
-        // Optional: Tag to send with EVERY log message
-        //
-        tags: ["global-tag"],
-        // Optional: logs will be stored in JSON format
-        json: "true"
-      });
-
-      //The following can be called on either the Meteor client or server
-
-      Logger.log("first log from meteor");
-      Logger.info("it will store this message with info tag");
-      Logger.info("all", "arguments", "will be stored");
-      Logger.info("my fancy object", {fancy: true});
-
-      Logger.log("log and wait of the response in a callback", function(err, result) {
-        console.log(err); // normally - null
-        console.log(result); // normally - { response: 'ok' }
-      })
-
+Logger.log("first log from meteor", "custom_tag");
+Logger.info("it will store this message with info tag");
+Logger.trace({data: myJSONData});
+Logger.error({message: "my fancy object", fancy: true});
 ```
 
 ## Licence
