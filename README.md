@@ -16,27 +16,27 @@ Loggly.{warn, error, info, trace} will produce error message with appropriate ta
 
 Once you have added the package, you will need to extend the Meteor.settings object with the following (e.g. in settings.json in your project root directory):
 
-```
+```json
 {
-  "token": "your-really-long-input-token",
-  "subdomain": "your-subdomain",
-  "auth": {
-    "username": "your-username",
-    "password": "your-password"
-  },
-  //
-  // Optional: Tag to send with EVERY log message
-  //
-  "tags": ["global-tag"],
-  // Optional: logs will be stored in JSON format
-  "json": "true"
+  "public": {},
+  "private": {},
+  "loggly": {
+    "token": "your-really-long-input-token",
+    "subdomain": "your-subdomain",
+    "auth": {
+      "username": "your-username",
+      "password": "your-password"
+    },
+    "tags": ["global-tag"],
+    "json": "true"
+  }
 }
 ```
 
 ## Usage (client/server side)
 
 ```js
-Logger.log("first log from meteor", "custom_tag");
+Logger.log("first log from meteor", ["custom_tag"]);
 Logger.info("it will store this message with info tag");
 Logger.trace({data: myJSONData});
 Logger.error({message: "my fancy object", fancy: true});
